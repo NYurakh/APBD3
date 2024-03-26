@@ -4,7 +4,7 @@ namespace LegacyApp
 {
     public class UserService
     {
-        public bool AddUser(string firstName, string lastName, string email, DateTime dateOfBirth, int clientId)
+        public static bool AddUser(string firstName, string lastName, string email, DateTime dateOfBirth, int clientId)
         {
             if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName))
             {
@@ -17,7 +17,7 @@ namespace LegacyApp
             }
 
             var now = DateTime.Now;
-            int age = now.Year - dateOfBirth.Year;
+            var age = now.Year - dateOfBirth.Year;
             if (now.Month < dateOfBirth.Month || (now.Month == dateOfBirth.Month && now.Day < dateOfBirth.Day)) age--;
 
             if (age < 21)
@@ -37,26 +37,26 @@ namespace LegacyApp
                 LastName = lastName
             };
 
-            if (client.Type == "VeryImportantClient")
+            switch (client.Type)
             {
-                user.HasCreditLimit = false;
-            }
-            else if (client.Type == "ImportantClient")
-            {
-                using (var userCreditService = new UserCreditService())
+                case "VeryImportantClient":
+                    user.HasCreditLimit = false;
+                    break;
+                case "ImportantClient":
                 {
-                    int creditLimit = userCreditService.GetCreditLimit(user.LastName, user.DateOfBirth);
+                    using var userCreditService = new UserCreditService();
+                    var creditLimit = userCreditService.GetCreditLimit(user.LastName, user.DateOfBirth);
                     creditLimit = creditLimit * 2;
                     user.CreditLimit = creditLimit;
+                    break;
                 }
-            }
-            else
-            {
-                user.HasCreditLimit = true;
-                using (var userCreditService = new UserCreditService())
+                default:
                 {
-                    int creditLimit = userCreditService.GetCreditLimit(user.LastName, user.DateOfBirth);
+                    user.HasCreditLimit = true;
+                    using var userCreditService = new UserCreditService();
+                    var creditLimit = userCreditService.GetCreditLimit(user.LastName, user.DateOfBirth);
                     user.CreditLimit = creditLimit;
+                    break;
                 }
             }
 

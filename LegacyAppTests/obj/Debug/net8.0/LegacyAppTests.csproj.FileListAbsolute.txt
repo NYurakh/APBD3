@@ -202,3 +202,4 @@ C:\Users\nazar\OneDrive\Documents\PJAIT\second_year\semester_2\APBD\Assignment_0
 C:\Users\nazar\OneDrive\Documents\PJAIT\second_year\semester_2\APBD\Assignment_03\zadanie_solution\LegacyAppTests\obj\Debug\net8.0\LegacyAppTests.pdb
 C:\Users\nazar\OneDrive\Documents\PJAIT\second_year\semester_2\APBD\Assignment_03\zadanie_solution\LegacyAppTests\obj\Debug\net8.0\LegacyAppTests.genruntimeconfig.cache
 C:\Users\nazar\OneDrive\Documents\PJAIT\second_year\semester_2\APBD\Assignment_03\zadanie_solution\LegacyAppTests\obj\Debug\net8.0\ref\LegacyAppTests.dll
+C:\Users\nazar\OneDrive\Documents\PJAIT\second_year\semester_2\APBD\Assignment_03\zadanie_solution\LegacyAppTests\obj\Debug\net8.0\LegacyAppTests.sourcelink.json

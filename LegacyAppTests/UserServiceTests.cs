@@ -11,7 +11,7 @@ public class UserServiceTests
         var service = new UserService();
 
         //Act
-        var result = service.AddUser(null, null, "kowalski@wp.pl", new DateTime(1980, 1, 1), 1);
+        var result = UserService.AddUser(null, null, "kowalski@wp.pl", new DateTime(1980, 1, 1), 1);
 
         //Assert
         Assert.Equal(false, result);
@@ -24,7 +24,7 @@ public class UserServiceTests
         var service = new UserService();
 
         //Act
-        var result = service.AddUser("John", "Doe", "kowalskiwppl", new DateTime(1980, 1, 1), 1);
+        var result = UserService.AddUser("John", "Doe", "kowalskiwppl", new DateTime(1980, 1, 1), 1);
 
         //Assert
         Assert.Equal(false, result);
@@ -37,7 +37,7 @@ public class UserServiceTests
         var service = new UserService();
 
         //Act
-        var result = service.AddUser("John", "Doe", "kowalski@wp.pl", new DateTime(2010, 1, 1), 1);
+        var result = UserService.AddUser("John", "Doe", "kowalski@wp.pl", new DateTime(2010, 1, 1), 1);
 
         //Assert
         Assert.Equal(false, result);
@@ -50,7 +50,7 @@ public class UserServiceTests
         var service = new UserService();
 
         //Act
-        var result = service.AddUser("John", "Malewski", "kowalski@wp.pl", new DateTime(1980, 1, 1), 2);
+        var result = UserService.AddUser("John", "Malewski", "kowalski@wp.pl", new DateTime(1980, 1, 1), 2);
 
         //Assert
         Assert.Equal(true, result);
@@ -63,7 +63,7 @@ public class UserServiceTests
         var service = new UserService();
 
         //Act
-        var result = service.AddUser("John", "Smith", "smith@gmail.pl", new DateTime(1980, 1, 1), 3);
+        var result = UserService.AddUser("John", "Smith", "smith@gmail.pl", new DateTime(1980, 1, 1), 3);
 
         //Assert
         Assert.Equal(true, result);
@@ -76,7 +76,7 @@ public class UserServiceTests
         var service = new UserService();
 
         //Act
-        var result = service.AddUser("John", "Kwiatkowski", "kwiatkowski@wp.pl", new DateTime(1980, 1, 1), 5);
+        var result = UserService.AddUser("John", "Kwiatkowski", "kwiatkowski@wp.pl", new DateTime(1980, 1, 1), 5);
 
         //Assert
         Assert.Equal(true, result);
@@ -89,7 +89,7 @@ public class UserServiceTests
         var service = new UserService();
 
         //Act
-        var result = service.AddUser("John", "Kowalski", "kowalski@wp.pl", new DateTime(1980, 1, 1), 1);
+        var result = UserService.AddUser("John", "Kowalski", "kowalski@wp.pl", new DateTime(1980, 1, 1), 1);
 
         //Assert
         Assert.Equal(false, result);
@@ -104,7 +104,7 @@ public class UserServiceTests
         //Act and Assert
         Assert.Throws<ArgumentException>(() =>
         {
-            _ = service.AddUser("John", "Unknown", "kowalski@wp.pl", new DateTime(1980, 1, 1), 100);
+            _ = UserService.AddUser("John", "Unknown", "kowalski@wp.pl", new DateTime(1980, 1, 1), 100);
         });
     }
     
@@ -117,7 +117,7 @@ public class UserServiceTests
         //Act and Assert
         Assert.Throws<ArgumentException>(() =>
         {
-            _ = service.AddUser("John", "Andrzejewicz", "andrzejewicz@wp.pl", new DateTime(1980, 1, 1), 6);
+            _ = UserService.AddUser("John", "Andrzejewicz", "andrzejewicz@wp.pl", new DateTime(1980, 1, 1), 6);
         });
     }
 }
