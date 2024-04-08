@@ -1,3 +1,3 @@
 # refactoring-example
-W tym zadaniu Waszym zadaniem jest modyfikacja kodu aplikacji nazwanej LegacyApp. Zakładamy, że jest to pewna spadkowa aplikacja i chcemy poprawić jakość jej kodu. Chcemy, aby kod w projekcie „LegacyAppConsumer” nie uległ modyfikacji. Innymi słowy kodu w tym projekcie nie możemy modyfikować.
-Wszystko w projekcie LegacyApp może być modyfikowane – tak długo dopóki nie powoduje to zmiany interfejsu klas wykorzystywanych w projekcie LegacyAppConsumer. Dodatkowo nie można zmodyfikować klasy UserDataAccess i metody statycznej AddUser. Zakładamy, że w pewnych przyczyn nie możemy modyfikować tej klasy.
+In this task, your key is to modify the code of the application called LegacyApp. You can access its code using this tool. We want the code in the "LegacyAppConsumer" project to remain unchanged. No other code is possible in this solution.
+Everything in the LegacyApp project can be modified - as long as it does not change the class interface in the LegacyAppConsumer project. Cannot get different UserDataAccess class and AddUser static methods. It has been written that this class cannot be used in the reason.
